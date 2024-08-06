@@ -1,6 +1,5 @@
 import axios from "axios";
 
-// const baseURL = "https://api.edamam.com/api/recipes/v2";
 const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 const fetchData = (url: string) => {
