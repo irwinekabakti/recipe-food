@@ -44,6 +44,7 @@ main {
 .header-top .top-social-links li {
   @apply mx-2 opacity-50 hover:opacity-100 default-transition;
 }
+
 .navbar-brand-wrapper {
   @apply border-y-[1px] border-gray/20 py-5;
 }
@@ -97,17 +98,6 @@ main {
 /* Category Slider */
 .categories-slider {
   @apply overflow-hidden my-5;
-}
-
-/* Footer */
-footer {
-  @apply bg-jet py-10;
-}
-.footer-top {
-  @apply flex items-center justify-center;
-}
-.footer-top .navbar-brand-text {
-  @apply text-[32px] text-white font-handlee font-bold;
 }
 
 /* loader */
@@ -231,6 +221,15 @@ nav {
 }
 
 /* footer */
+footer {
+  @apply bg-jet py-10;
+}
+.footer-top {
+  @apply flex items-center justify-center;
+}
+.footer-top .navbar-brand-text {
+  @apply text-[32px] text-white font-handlee font-bold;
+}
 footer .navbar-brand {
   @apply inline-flex items-center justify-center;
 }

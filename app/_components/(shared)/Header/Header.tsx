@@ -17,6 +17,7 @@ const Header: React.FC = () => {
           </Link>
         </div>
       </div>
+
       <div className="header-bottom">
         <div className="container">
           <Navbar />

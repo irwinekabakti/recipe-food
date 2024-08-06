@@ -11,20 +11,18 @@ import { SearchRecipeArgs } from "@/types/type";
 
 export const fetchRecipes = createAsyncThunk(
   "recipes/fetchRecipes",
-  async (queryText: string = "chicken") => {
+  async (queryText: string) => {
     try {
-      // searching chicken recipes by default
       const { data } = await fetchData(
         `?type=public&app_id=${APP_ID}&app_key=${APP_KEY}&q=${queryText}`
       );
-      let recipesData = extractRecipeData(data);
+      const recipesData = extractRecipeData(data);
       return recipesData;
     } catch (error) {
-      throw Error("Failed to fetch recipes.");
+      throw new Error("Failed to fetch recipes.");
     }
   }
 );
-
 export const fetchSearchRecipe = createAsyncThunk(
   "recipes/fetchSearchRecipes",
   async ({ queryText, nextPageLink }: SearchRecipeArgs) => {

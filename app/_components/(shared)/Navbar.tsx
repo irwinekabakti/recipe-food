@@ -1,7 +1,7 @@
 "use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-// import PropTypes from "prop-types";
 
 const Navbar: React.FC = () => {
   const pathname = usePathname();
@@ -54,9 +54,3 @@ const CustomNavLink: React.FC<NavLinkProps> = ({ href, label, isActive }) => (
     {label}
   </Link>
 );
-
-// CustomNavLink.propTypes = {
-//   href: PropTypes.string.isRequired,
-//   label: PropTypes.string.isRequired,
-//   isActive: PropTypes.bool.isRequired,
-// };
