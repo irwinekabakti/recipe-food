@@ -11,8 +11,8 @@ const TypeList: React.FC<TypeListProps> = ({ typeList, typeId }) => {
           className="types-item group"
           key={idx}>
           <Image
-            src={typeItem.image}
-            alt={typeItem.type}
+            src={typeItem?.image}
+            alt={typeItem?.type}
             quality={100}
             rel="preload"
           />
