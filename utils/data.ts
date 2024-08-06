@@ -1,11 +1,18 @@
 import {
+  CuisineItem,
+  DishTypeItem,
+  FooterLink,
+  MealTypeItem,
+  SliderItem,
+} from "@/types/type";
+import {
   slider_images,
   cuisines_images,
   meals_images,
   dishes_images,
 } from "./images";
 
-const sliderData = [
+const sliderData: SliderItem[] = [
   {
     id: 1,
     title: "Baked Chicken Breast",
@@ -32,7 +39,7 @@ const sliderData = [
   },
 ];
 
-const cuisinesData = [
+const cuisinesData: CuisineItem[] = [
   {
     type: "American",
     image: cuisines_images[0],
@@ -67,7 +74,7 @@ const cuisinesData = [
   },
 ];
 
-const mealTypeData = [
+const mealTypeData: MealTypeItem[] = [
   {
     type: "Breakfast",
     image: meals_images[0],
@@ -90,7 +97,7 @@ const mealTypeData = [
   },
 ];
 
-const dishTypeData = [
+const dishTypeData: DishTypeItem[] = [
   {
     type: "Alcohol-cocktail",
     image: dishes_images[0],
@@ -129,7 +136,7 @@ const dishTypeData = [
   },
 ];
 
-const footerLinksData = [
+const footerLinksData: FooterLink[] = [
   {
     linkId: "recipe-glossary",
     linkName: "Recipe Glossary",

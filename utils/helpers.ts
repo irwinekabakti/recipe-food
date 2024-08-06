@@ -1,13 +1,13 @@
-export const extractIdAfterHash = (uri: any) => {
+const extractIdAfterHash = (uri: string): string => {
   let posOfHas = uri.indexOf("#");
   let extractedId = uri.slice(posOfHas + 1);
   return extractedId;
 };
 
-export const extractRecipeData = (data: any) => {
+const extractRecipeData = (data: any) => {
   let tempRecipes = data.hits.map((tempRecipe: any) => {
     return {
-      id: extractIdAfterHash(tempRecipe.recipe.uri), // Example: recipe_8d3e4b9299664a1ca8e6f5bdb8532300,
+      id: extractIdAfterHash(tempRecipe.recipe.uri),
       name: tempRecipe.recipe.label,
       image: tempRecipe.recipe.image,
       images: tempRecipe.recipe.images,
@@ -32,9 +32,9 @@ export const extractRecipeData = (data: any) => {
   };
 };
 
-export const extractSingleRecipeData = (data: any) => {
+const extractSingleRecipeData = (data: any) => {
   let tempRecipe = {
-    id: extractIdAfterHash(data.recipe.uri), // Example: recipe_8d3e4b9299664a1ca8e6f5bdb8532300,
+    id: extractIdAfterHash(data.recipe.uri),
     name: data.recipe.label,
     image: data.recipe.image,
     images: data.recipe.images,
@@ -54,3 +54,5 @@ export const extractSingleRecipeData = (data: any) => {
 
   return tempRecipe;
 };
+
+export { extractIdAfterHash, extractRecipeData, extractSingleRecipeData };

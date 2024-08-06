@@ -16,7 +16,14 @@ const Footer: React.FC = () => {
       <div className="container">
         <div className="footer-top">
           <Link href="/" className="navbar-brand">
-            <Image src={logo} alt="site_logo" width={60} height={60} />
+            <Image
+              src={logo}
+              alt="site_logo"
+              width={60}
+              height={60}
+              quality={100}
+              rel="preload"
+            />
             <p className="navbar-brand-text">
               find<span className="text-orange">Recipe.</span>
             </p>

@@ -19,7 +19,12 @@ const BannerSlider: React.FC = () => {
     <Slider className="header-slider" {...settings}>
       {sliderData.map((sliderItem) => (
         <div className="slider-item" key={sliderItem.id}>
-          <Image src={sliderItem.image} alt="slider_image" />
+          <Image
+            src={sliderItem.image}
+            alt="slider_image"
+            quality={100}
+            rel="preload"
+          />
           <div className="slider-item-content max-w-[800px]">
             <h2>{sliderItem.title}</h2>
             <p>{sliderItem.text}</p>

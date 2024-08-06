@@ -8,6 +8,7 @@ import { APP_ID, APP_KEY } from "@/api/api-constant";
 import { extractRecipeData, extractSingleRecipeData } from "@/utils/helpers";
 import fetchData from "@/api/axios";
 import { SearchRecipeArgs } from "@/types/type";
+import { RootState } from "..";
 
 export const fetchRecipes = createAsyncThunk(
   "recipes/fetchRecipes",
@@ -48,8 +49,8 @@ export const fetchSearchRecipe = createAsyncThunk(
 );
 
 export const fetchSingleRecipe = createAsyncThunk(
-  "recipe/fetchSingleRecipes",
-  async (recipeId) => {
+  "recipe/fetchSingleRecipe",
+  async (recipeId: string) => {
     try {
       const { data } = await fetchData(
         `/${recipeId}?type=public&app_id=${APP_ID}&app_key=${APP_KEY}`
@@ -87,7 +88,6 @@ const recipesSlice = createSlice({
   },
   extraReducers(builder) {
     builder
-      // handling fetching of all recipes
       .addCase(fetchRecipes.pending, (state: any) => {
         state.status = STATUS.LOADING;
       })
@@ -100,8 +100,6 @@ const recipesSlice = createSlice({
         state.status = STATUS.FAILED;
         state.error = action.error.message;
       })
-
-      // handling fetching of single recipe
       .addCase(fetchSingleRecipe.pending, (state: any) => {
         state.status = STATUS.LOADING;
       })
@@ -113,8 +111,6 @@ const recipesSlice = createSlice({
         state.status = STATUS.FAILED;
         state.error = action.error.message;
       })
-
-      // handle recipe search by search terms
       .addCase(fetchSearchRecipe.pending, (state: any) => {
         state.status = STATUS.LOADING;
       })
@@ -134,12 +130,14 @@ export const { selectAll: selectAllRecipes } = recipesAdapter.getSelectors(
   (state: any) => state.recipes
 );
 
-export const getRecipesStatus = (state: any) => state.recipes.status;
-export const getRecipesError = (state: any) => state.recipes.error;
-export const getSearchQuery = (state: any) => state.recipes.searchQuery;
-export const selectSearchResult = (state: any) => state.recipes.searchResult;
-export const getRecipesNextPage = (state: any) => state.recipes.nextPage;
-export const selectSingleRecipe = (state: any) => state.recipes.singleRecipe;
+export const getRecipesStatus = (state: RootState) => state.recipes.status;
+export const getRecipesError = (state: RootState) => state.recipes.error;
+export const getSearchQuery = (state: RootState) => state.recipes.searchQuery;
+export const selectSearchResult = (state: RootState) =>
+  state.recipes.searchResult;
+export const getRecipesNextPage = (state: RootState) => state.recipes.nextPage;
+export const selectSingleRecipe = (state: RootState) =>
+  state.recipes.singleRecipe;
 
 export const { setSearchQuery, clearSearch } = recipesSlice.actions;
 export default recipesSlice.reducer;

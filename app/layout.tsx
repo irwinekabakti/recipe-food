@@ -21,7 +21,9 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => (
     <body className={inter.className}>
       <ReduxProvider>
         <Header />
-        {children}
+        <div className="overflow-x-hidden min-h-[50vh]">
+          <main className="main-content min-h-screen">{children}</main>
+        </div>
         <Footer />
       </ReduxProvider>
     </body>

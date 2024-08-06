@@ -33,7 +33,7 @@ const RecipeItem: React.FC<RecipeItemProps> = ({ recipe }) => {
             </li>
           </ul>
         </div>
-        <Link href={`/recipes/selected/${id}`} className="read-btn">
+        <Link href={`/recipes/detail/${id}`} className="read-btn">
           Real Full Recipe <AiOutlineArrowRight />
         </Link>
       </div>

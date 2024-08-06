@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const baseURL = "https://api.edamam.com/api/recipes/v2";
+const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
-const fetchData = (url: any) => {
+const fetchData = (url: string) => {
   const instance = axios.create();
   // In the case of the url fetch link (E.g. next page data fetch link)
   if (url.startsWith("http://") || url.startsWith("https://")) {
