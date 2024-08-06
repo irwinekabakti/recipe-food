@@ -88,7 +88,6 @@ const recipesSlice = createSlice({
   },
   extraReducers(builder) {
     builder
-      // handling fetching of all recipes
       .addCase(fetchRecipes.pending, (state: any) => {
         state.status = STATUS.LOADING;
       })
@@ -101,8 +100,6 @@ const recipesSlice = createSlice({
         state.status = STATUS.FAILED;
         state.error = action.error.message;
       })
-
-      // handling fetching of single recipe
       .addCase(fetchSingleRecipe.pending, (state: any) => {
         state.status = STATUS.LOADING;
       })
@@ -114,8 +111,6 @@ const recipesSlice = createSlice({
         state.status = STATUS.FAILED;
         state.error = action.error.message;
       })
-
-      // handle recipe search by search terms
       .addCase(fetchSearchRecipe.pending, (state: any) => {
         state.status = STATUS.LOADING;
       })
