@@ -49,8 +49,8 @@ export const fetchSearchRecipe = createAsyncThunk(
 );
 
 export const fetchSingleRecipe = createAsyncThunk(
-  "recipe/fetchSingleRecipes",
-  async (recipeId) => {
+  "recipe/fetchSingleRecipe",
+  async (recipeId: string) => {
     try {
       const { data } = await fetchData(
         `/${recipeId}?type=public&app_id=${APP_ID}&app_key=${APP_KEY}`

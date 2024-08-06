@@ -15,7 +15,7 @@ const PageTitle: React.FC<PageTitleProps> = ({ titleData }) => {
     <div
       className="page-title"
       style={{
-        background: `url(${food_bg_one}) center/cover no-repeat`,
+        background: `url(${food_bg_one.src}) center/cover no-repeat`,
       }}>
       <div className="container">
         <h2>

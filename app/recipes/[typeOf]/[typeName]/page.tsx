@@ -19,10 +19,10 @@ import { STATUS } from "@/utils/status";
 import RecipeList from "@/app/_components/Recipe/RecipeList";
 import { AppDispatch } from "@/store";
 
-const page = () => {
+const page: React.FC = () => {
   const tempData = useParams();
-  // console.log(tempData, "<== temp data");
   const [typeData, setTypeData] = useState<any>(tempData);
+  console.log(typeData, "<==");
   const dispatch = useDispatch<AppDispatch>();
   const recipes = useSelector(selectTypesAllRecipes);
   const recipesStatus = useSelector(getTypesRecipesStatus);

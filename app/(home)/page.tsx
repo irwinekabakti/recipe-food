@@ -22,10 +22,12 @@ import { useAppDispatch, useAppSelector } from "@/store";
 import Image from "next/image";
 import { Recipe } from "@/types/type";
 
+type SearchStatus = (typeof STATUS)[keyof typeof STATUS];
+
 const Home: React.FC = () => {
   const dispatch = useAppDispatch();
   const recipes = useAppSelector(selectAllRecipes);
-  const recipesStatus = useAppSelector(getRecipesStatus);
+  const recipesStatus = useAppSelector(getRecipesStatus) as SearchStatus;
   const recipesError = useAppSelector(getRecipesError);
 
   useEffect(() => {
@@ -51,7 +53,6 @@ const Home: React.FC = () => {
       <section className="showcase-recipes">
         <div className="container">
           <Title subTitle="Some Recipes" mainTitle="Chicken Recipes" />
-          {/* recipes list */}
 
           {STATUS.LOADING === recipesStatus ? (
             <Loader />

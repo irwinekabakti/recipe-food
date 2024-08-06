@@ -22,7 +22,7 @@ import { Recipe } from "@/types/type";
 
 type SearchStatus = (typeof STATUS)[keyof typeof STATUS];
 
-const page = () => {
+const page: React.FC = () => {
   const dispatch = useAppDispatch();
   const queryText = useAppSelector(getSearchQuery);
   const searchRecipes = useAppSelector(
@@ -41,7 +41,12 @@ const page = () => {
   if (!searchRecipes || searchRecipes.length === 0) {
     return (
       <div className="container py-8 custom-min-h no-results-msg">
-        <Image src={no_results} alt="no results image" />
+        <Image
+          src={no_results}
+          alt="no results image"
+          quality={100}
+          rel="preload"
+        />
         <p>No search results found!</p>
       </div>
     );
