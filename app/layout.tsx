@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from "@/store/ReduxProvider";
 import Header from "./_components/(shared)/Header/Header";
+import Footer from "./_components/(shared)/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => (
       <ReduxProvider>
         <Header />
         {children}
+        <Footer />
       </ReduxProvider>
     </body>
   </html>
