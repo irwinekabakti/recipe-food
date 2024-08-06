@@ -40,7 +40,12 @@ const MealSlider: React.FC = () => {
       {mealTypeData?.map((meal: any) => (
         <div key={meal?.type} className="meal-item-wrapper">
           <Link href={`recipes/meal/${meal?.type}`} className="meal-item">
-            <Image src={meal?.image} alt="image-meal" />
+            <Image
+              src={meal?.image}
+              alt="image-meal"
+              quality={100}
+              rel="preload"
+            />
             <span className="meal-item-name">{meal?.type}</span>
           </Link>
         </div>

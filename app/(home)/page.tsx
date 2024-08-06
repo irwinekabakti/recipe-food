@@ -72,7 +72,12 @@ const Home: React.FC = () => {
                 key={idx}
                 href={`recipes/dish/${dish?.type}`}
                 className="dishes-item">
-                <Image src={dish.image} alt="img-dish" />
+                <Image
+                  src={dish.image}
+                  alt="img-dish"
+                  quality={100}
+                  rel="preload"
+                />
                 <p className="dishes-item-name">{dish.type}</p>
               </Link>
             ))}

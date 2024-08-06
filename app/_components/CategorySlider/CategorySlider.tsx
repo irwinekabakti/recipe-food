@@ -48,7 +48,12 @@ const CategorySlider: React.FC = () => {
           href={`recipes/cuisine/${cuisine?.type}`}
           key={cuisine?.type}
           className="cuisine-item">
-          <Image src={cuisine?.image} alt="img-category" />
+          <Image
+            src={cuisine?.image}
+            alt="img-category"
+            quality={100}
+            rel="preload"
+          />
           <p className="cuisine-item-name">{cuisine?.type}</p>
         </Link>
       ))}

@@ -10,7 +10,13 @@ const Header: React.FC = () => {
       <div className="navbar-brand-wrapper">
         <div className="container">
           <Link href="/" className="navbar-brand flex items-center">
-            <Image src={logo} alt="site logo" width={60} />
+            <Image
+              src={logo}
+              alt="site logo"
+              width={60}
+              quality={100}
+              rel="preload"
+            />
             <p className="navbar-brand-text">
               find<span className="text-orange">Recipe.</span>
             </p>
