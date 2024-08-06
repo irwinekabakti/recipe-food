@@ -22,7 +22,6 @@ import { AppDispatch } from "@/store";
 const page: React.FC = () => {
   const tempData = useParams();
   const [typeData, setTypeData] = useState<any>(tempData);
-  console.log(typeData, "<==");
   const dispatch = useDispatch<AppDispatch>();
   const recipes = useSelector(selectTypesAllRecipes);
   const recipesStatus = useSelector(getTypesRecipesStatus);
